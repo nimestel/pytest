@@ -12,14 +12,12 @@ class Application:
         self.group = GroupHelper(self)
 
     def open_home_page(self):
-        wd = self.wd
-        wd.get("http://addressbook/")
+        self.wd.get("http://addressbook/")
 
     def destroy(self):
         self.wd.quit()
 
     def is_valid(self):
-        wd = self.wd
         try:
             self.wd.current_url
             return True
