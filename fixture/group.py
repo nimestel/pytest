@@ -65,9 +65,9 @@ class GroupHelper:
         wd = self.app.wd
         self.open_groups_page()
         groups = []
-        elements = wd.find_elements_by_name("selected[]")
+        elements = wd.find_elements_by_css_selector(".position")
         for element in elements:
             text = element.text
-            id = element.get_attribute("value")
+            id = element.find_element_by_name("selected[]").get_attribute("value")
             groups.append(Group(name=text, id=id))
         return groups
