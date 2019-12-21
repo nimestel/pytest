@@ -1,4 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
+
+from fixture.contact import ContactHelper
 from fixture.session import SessionHelper
 from fixture.group import GroupHelper
 
@@ -10,6 +12,7 @@ class Application:
         self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
+        self.contact = ContactHelper(self)
 
     def open_home_page(self):
         self.wd.get("http://addressbook/")
