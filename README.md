@@ -1,1 +1,1 @@
-# Тренинг по Питону в рамках автотестирования
+test project for python testing
